@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.0.1/remixicon.css"
+        integrity="sha512-ZH3KB6wI5ADHaLaez5ynrzxR6lAswuNfhlXdcdhxsvOUghvf02zU1dAsOC6JrBTWbkE1WNDNs5Dcfz493fDMhA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            background-color: red;
+        }
+
+        .hamburger {
+            display: none;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            background-color: #101010;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-item {
+            margin-left: 5rem;
+            border-top: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+        }
+        .nav-item :hover{
+           
+           border-top: 1px solid #fff;
+           border-bottom: 1px solid #fff;
+       }
+
+        .nav-link {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: white;
+        }
+        
+
+        /* .nav-link:hover {
+            color: #482ff7;
+        } */
+
+        .nav-logo {
+            font-size: 2.1rem;
+            font-weight: 500;
+            color: #482ff7;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 5rem;
+                flex-direction: column;
+                background-color: transparent;
+                backdrop-filter: blur(20px);
+                width: 100%;
+                border-radius: 10px;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow:
+                    0 10px 27px rgba(0, 0, 0, 0.05);
+                z-index: 12;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 2.5rem 0;
+            }
+
+            .hamburger {
+                display: block;
+                cursor: pointer;
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+        }
+
+        .parallax {
+            background-image: url('https://empire-s3-production.bobvila.com/articles/wp-content/uploads/2022/12/iStock-1310455312-mig-vs-tig-welding-welding-sparks.jpg');
+            height: 100%;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: -1;
+            margin: 0;
+        }
+
+        .footer {
+            background-color: red;
+            text-align: center;
+            color: white;
+            height: 100px;
+            padding-top: 30px;
+        }
+
+        .h1 {
+            text-align: center;
+            color: white;
+            font-size: 30px;
+        }
+
+        .h3 {
+            color: white;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .main_box {
+            width: 100%;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .box1 {
+            width: 600px;
+            height: 90%;
+            color: white;
+            text-align: center;
+            background-color: #0000009c;
+            /* background-color: transparent black;
+            backdrop-filter: blur(35px); */
+            margin: 50px;
+            padding: 50px;
+            margin-top: 100px;
+            border-top-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            border: solid #FFFF00;
+        }
+
+        .box1:hover {
+            /* box-shadow: 0px 8px 16px 0px white; */
+            height: auto;
+        }
+
+        .head {
+            text-align: center;
+            background-color: transparent;
+            color: white;
+            padding: 50px;
+            /* box-shadow: 0px 8px 16px 0px black; */
+        }
+
+        @media screen and (min-width: 1077px) {
+            .main_box {
+                height: fit-content;
+            }
+
+        }
+
+        @media screen and (min-width: 914px) {
+            .main_box {
+                height: fit-content;
+            }
+
+        }
+
+        @media screen and (min-width: 768px) {
+            .main_box {
+                height: fit-content;
+            }
+
+        }
+
+        @media screen and (min-width: 614px) {
+            .main_box {
+                height: fit-content;
+            }
+
+        }
+
+        @media screen and (min-width: 412px) {
+            .main_box {
+                height: fit-content;
+            }
+
+        }
+
+        @media screen and (min-width: 364px) {
+            .main_box {
+                height: fit-content;
+            }
+
+            .nav-menu.active {
+                width: 363px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parallax">
+        <header class="header">
+            <nav class="navbar">
+                <img src="https://www.maluweld.com/image/logo.jpg"
+                    alt="">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="aboutus.html" class="nav-link">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html" class="nav-link">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact Us</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </header>
+        <div class="h1">
+            <br>
+            <h1>ABOUT US</h1>
+        </div>
+        <div class="h3">
+            <br><br>
+            <div>
+                <h3>India's Largest Selling Maluweld! <br> Based in nagpur(maharashtra).We specialized in all welding
+                    electrodes.</h3>
+            </div>
+        </div>
+
+        <div class="main_box">
+            <div class="box1">
+                <div>
+                    <h2 style="text-align: center;">What is Malu Weld?</h2>
+                </div>
+                <br><br><br>
+                <div>
+                    <h3 style="font-size: 20px;">We are delivering quality services and satisfaction to our clients from
+                        the past 10+ years.Malu
+                        Weld is an ISO 9001 certified company equipped with best quality management.Maluweld products
+                        are
+                        distributed across india and in various countries across the world.Our team is filled with
+                        people
+                        having wide range of experience in the welding field.</h3>
+                </div>
+            </div>
+            <div>
+                <img src="https://t4.ftcdn.net/jpg/06/73/70/77/360_F_673707736_y1DhgCM1z1KyTFlGRhr1LbFabs46nZQg.jpg"
+                    style="border-top-right-radius: 50px; border-bottom-left-radius: 50px;">
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div>
+            <h3>Copyright © 2023 Maluweld</h3>
+            <h3>Developed by <a href="https://www.pskitservices.com/" style="color: #fff;">PSK Technologies Pvt.Ltd.</a></h3>
+        </div>
+    </div>
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", mobileMenu);
+
+        function mobileMenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+
+        const navLink = document.querySelectorAll(".nav-link");
+
+        navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+        function closeMenu() {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME MALUWELD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.0.1/remixicon.css"
+        integrity="sha512-ZH3KB6wI5ADHaLaez5ynrzxR6lAswuNfhlXdcdhxsvOUghvf02zU1dAsOC6JrBTWbkE1WNDNs5Dcfz493fDMhA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            background-color: red;
+        }
+
+        .hamburger {
+            display: none;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            background-color: #101010;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+           
+        }
+
+        .nav-item {
+            margin-left: 5rem;
+            border-top: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+        }
+        .nav-item :hover{
+           
+            border-top: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+        }
+
+        .nav-link {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: white;
+        }
+
+       /* .nav-link:hover {
+             color: black;
+             border-radius: 0px 8px 16px 0px #fff; 
+       }  */
+
+        .nav-logo {
+            font-size: 2.1rem;
+            font-weight: 500;
+            color: #482ff7;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 5rem;
+                flex-direction: column;
+                background-color: transparent;
+                backdrop-filter: blur(20px);
+                width: 100%;
+                border-radius: 10px;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow:
+                    0 10px 27px rgba(0, 0, 0, 0.05);
+                z-index: 12;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 2.5rem 0;
+            }
+
+            .hamburger {
+                display: block;
+                cursor: pointer;
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+        }
+
+        .heading1 {
+            color: white;
+            text-align: center;
+            zoom: normal;
+            overflow: hidden;
+            height: 200px;
+            margin-top: 100px;
+            justify-content: center;
+        }
+
+        .heading2 {
+            font-size: 20px;
+            color: white;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .contact_btn_container {
+            width: 98vw;
+            height: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 100px;
+        }
+
+        .btn {
+            border: 2px solid rgba(38, 38, 38, 0.193);
+            background: red;
+            width: 198px;
+            height: 55px;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 15px;
+            color: white;
+            font-weight: 600;
+            font-family: 'Kalam','cursive';
+            transition: 0.3s;
+        }
+
+        .btn a {
+            color: white;
+            font-size: 18px;
+        }
+
+        .btn:hover {
+            /* transform: translate(2px, 2px); */
+            color: black;
+            background-color: #DF986B;  
+        }
+
+        .main_box {
+            width: 98.9vw;
+            height: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-top: 100px;
+        }
+
+        .box1 {
+            width: 300px;
+            height: 100%;
+            color: white;
+            text-align: center;
+            background-color: #0000009c;
+            /* background-color: transparent;
+            backdrop-filter: blur(40px); */
+            padding: 50px;
+            border-radius: 10px;
+        }
+
+        .box1:hover {
+            color: white;
+            box-shadow: 0px 5px 7px 0px white;
+        }
+
+        .dash {
+            height: 4px;
+            width: 60%;
+            background-image: linear-gradient(to right, red, blue);
+            margin: 10px 20% 10px 20%;
+        }
+
+        .h1 {
+            height: 100px;
+            width: 100%;
+            /* background-color: transparent;
+            backdrop-filter: blur(10px); */
+            background-color: black;
+            text-align: center;
+            margin-top: 100px;
+            padding: 25px;
+            color: white;
+            font-weight: 900;
+        }
+
+        .parallax {
+            background-image: url('https://wallpapers.com/images/featured/welding-yqrj8f39fxdd8x0w.jpg');
+            height: 100%;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: -1;
+            margin: 0;
+        }
+
+        .zoom-in-out-box {
+            width: 100vw;
+            margin-top: 30px;
+            animation: zoom-in-zoom-out 1s ease infinite;
+            overflow: hidden;
+        }
+
+        @keyframes zoom-in-zoom-out {
+            0% {
+                transform: scale(1, 1);
+            }
+
+            50% {
+                transform: scale(1.5, 1.5);
+            }
+
+            100% {
+                transform: scale(1, 1);
+            }
+        }
+
+        i {
+            font-size: 50px;
+        }
+
+        .main_prop {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            color: white;
+            height: 200px;
+            width: 400px;
+        }
+
+        .main_prop2 {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            gap: 20px;
+            color: white;
+            height: 200px;
+            width: 100%;
+        }
+
+        .right {
+            height: 650px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 70px;
+            margin-top: 100px;
+        }
+
+        .papa_prop {
+            height: 100%;
+            width: 500px;
+            background-color: transparent;
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border: 5px solid white;
+
+        }
+
+        .right_image {
+            height: 100%;
+            width: 550px;
+        }
+
+        .right_image img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .right_image img:hover {
+            color: black;
+            box-shadow: 0px 5px 7px 0px black;
+        }
+
+        .main_box1 {
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .footer {
+            background-color: red;
+            text-align: center;
+            color: white;
+            height: 100px;
+            padding-top: 30px;
+        }
+
+        .img {
+            margin: 40px;
+        }
+
+        @media only screen and (max-width: 1408px) {}
+
+        @media only screen and (max-width: 1315px) {}
+
+        @media only screen and (max-width: 1080px) {}
+
+        @media only screen and (max-width: 931px) {}
+
+        @media only screen and (max-width: 786px) {
+            .right {
+                flex-wrap: wrap;
+                height: fit-content;
+            }
+
+            /* .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: #333;
+                padding: 20px;
+            } */
+
+
+        }
+
+        @media only screen and (max-width: 640px) {
+            .right {
+                flex-wrap: wrap;
+                height: fit-content;
+            }
+
+            /* .zoom-in-out-box {
+                animation: none;
+            } */
+
+        }
+
+        @media only screen and (max-width: 575px) {
+            .right {
+                flex-wrap: wrap;
+                height: fit-content;
+            }
+        }
+
+        @media only screen and (max-width: 414px) {
+            .right {
+                flex-wrap: wrap;
+                height: fit-content;
+            }
+
+            .papa_prop {
+                width: 390px;
+            }
+
+            .main_prop {
+                width: 290px;
+            }
+
+            .main_prop2 {
+                width: 290px;
+            }
+
+        }
+        @media only screen and (max-width: 364px) {
+            .right {
+                flex-wrap: wrap;
+                height: fit-content;
+            }
+
+            .papa_prop {
+                width: 300px;
+            }
+
+            .main_prop {
+                width: 200px;
+            }
+
+            .main_prop2 {
+                width: 200px;
+            }
+            .zoom-in-out-box{
+                font-size: 16px;
+                width: 250px;
+                margin-left: 50px;
+            }
+
+        }
+    </style>
+
+<body>
+    <div class="parallax">
+        <header class="header">
+            <nav class="navbar">
+                <img src="https://www.maluweld.com/image/logo.jpg"
+                    alt="">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="aboutus.html" class="nav-link">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html" class="nav-link">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact Us</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </header>
+        <div class="heading1">
+            <h1 class="zoom-in-out-box">
+                MANUFACTURER OF ALL TYPES OF WELDING<br> ELECTRODES AND WIRES
+            </h1>
+        </div>
+
+        <div class="heading2">
+            <h3>India's Largest Selling Maluweld !<br>A wide range of products to cater every demand</h3>
+        </div>
+
+        <div class="contact_btn_container">
+            <button class="btn"><a href="contact.html">CONTACT US NOW</a></button>
+        </div>
+        <div class="main_box">
+            <div class="box1">
+                <div>
+                    <h2>10+ YEARS <br> EXPERIENCE</h2>
+                </div>
+                <div class="dash"></div>
+                <div>
+                    <h4>Delivering quality services and satisfaction to our clients from the past 10+ years.</h4>
+                </div>
+            </div>
+
+            <div class="box1" style="scroll-margin-top: 500px;">
+                <div>
+                    <h2>CERTIFIED <br> COMPANY</h2>
+                </div>
+                <div class="dash"></div>
+                <div>
+                    <h4>Malu weld is an ISO 9001 certified company equipped with best Quality Management.</h4>
+                </div>
+            </div>
+
+            <div class="box1">
+                <div>
+                    <h2>DISTRIBUTION <br> NETWORK</h2>
+                </div>
+                <div class="dash"></div>
+                <div>
+                    <h4>Maluweld products are distributed across india and in various countries across the world.</h4>
+                </div>
+            </div>
+
+            <div class="box1">
+                <div>
+                    <h2>EXPERT <br> TEAM</h2>
+                </div>
+                <div class="dash"></div>
+                <div>
+                    <h4>Our team filled with people having wide range <br> of experience in the welding field.</h4>
+                </div>
+            </div>
+        </div>
+        <div class="expertise_container">
+            <div class="h1">
+                <h1>OUR EXPERTISE</h1>
+            </div>
+
+            <div class="boxes1">
+
+                <div class="right">
+                    <div class="right_image">
+                        <img src="https://instacore.in/wp-content/uploads/2021/04/abotus.jpg" alt="">
+                    </div>
+                    <div class="papa_prop">
+                        <div class="main_prop">
+                            <div class="prop_icon">
+                                <i class="ri-building-4-line"></i>
+                            </div>
+                            <div class="prop_title">
+                                <h2>WE ARE PROFFESSIONAL ORGANISATION</h2>
+                                <p>We make professional quality welding consumable for a wide range of materials</p>
+                            </div>
+                        </div>
+                        <div class="main_prop2">
+                            <div class="prop_icon">
+                                <i class="ri-shake-hands-fill"></i>
+                            </div>
+                            <div class="prop_title">
+                                <h2>WE ARE PROFFESSIONAL ORGANISATION</h2>
+                                <p>We make professional quality welding consumable for a wide range of materials</p>
+                            </div>
+                        </div>
+                        <div class="main_prop">
+                            <div class="prop_icon">
+                                <i class="ri-group-fill"></i>
+                            </div>
+                            <div class="prop_title">
+                                <h2>WE ARE PROFFESSIONAL ORGANISATION</h2>
+                                <p>We make professional quality welding consumable for a wide range of materials</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div>
+        <h1>
+            <center>CLIENTS WE'VE WORKED WITH</center>
+        </h1>
+    </div>
+
+    <div class="main_box1">
+        <div class="img">
+            <img src="https://www.maluweld.com/image/cli1.jpg" width="120px">
+        </div>
+        <div class="img">
+            <img src="https://www.maluweld.com/image/cli2.jpg"
+                width="140px">
+        </div>
+        <div class="img">
+            <img src="https://www.maluweld.com/image/cli5.png" width="170px">
+        </div>
+        <div class="img">
+            <img src="https://www.maluweld.com/image/cli3.jpg" width="120px">
+        </div>
+        <div class="img">
+            <img src="https://www.maluweld.com/image/cli4.gif" width="180px">
+        </div>
+        <div class="img">
+            <img src="https://www.maluweld.com/image/cli6.jpg" width="130px">
+        </div>
+    </div>
+
+    <div class="footer">
+        <div>
+            <h3>Copyright © 2023 Maluweld</h3>
+            <h3>Developed by <a href="https://www.pskitservices.com/" style="color: #fff;">PSK Technologies Pvt.Ltd.</a></h3>
+        </div>
+    </div>
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", mobileMenu);
+
+        function mobileMenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+
+        const navLink = document.querySelectorAll(".nav-link");
+
+        navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+        function closeMenu() {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }
+    </script>
+
+</body>
+
+</html>

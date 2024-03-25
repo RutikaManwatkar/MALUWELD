@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.0.1/remixicon.css"
+        integrity="sha512-ZH3KB6wI5ADHaLaez5ynrzxR6lAswuNfhlXdcdhxsvOUghvf02zU1dAsOC6JrBTWbkE1WNDNs5Dcfz493fDMhA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        a {
+            text-decoration: none;
+        }
+        li {
+            list-style: none;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            background-color: red;
+        }
+
+        .hamburger {
+            display: none;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            background-color: #101010;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-item {
+            margin-left: 5rem;
+            border-top: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+        }
+        .nav-item :hover{
+           
+           border-top: 1px solid #fff;
+           border-bottom: 1px solid #fff;
+       }
+
+        .nav-link {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: white;
+        }
+
+        /* .nav-link:hover {
+            color: #482ff7;
+        } */
+
+        .nav-logo {
+            font-size: 2.1rem;
+            font-weight: 500;
+            color: #482ff7;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 5rem;
+                flex-direction: column;
+                background-color: transparent;
+                backdrop-filter: blur(20px);
+                width: 100%;
+                border-radius: 10px;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow:
+                    0 10px 27px rgba(0, 0, 0, 0.05);
+                z-index: 12;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 2.5rem 0;
+            }
+
+            .hamburger {
+                display: block;
+                cursor: pointer;
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+        }
+
+        .h1 {
+            text-align: center;
+            color: #fff;
+            font-size: 30px;
+        }
+
+        .heading {
+            text-align: center;
+            color: white;
+        }
+
+        .parallax {
+            background-image: url('https://wallpapers.com/images/hd/welding-88n8q6l12oa8xscv.jpg');
+            height: 100%;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: -1;
+            margin: 0;
+        }
+
+        .footer {
+            background-color: red;
+            text-align: center;
+            color: white;
+            height: 100px;
+            padding-top: 30px;
+        }
+
+        .main_box {
+            width: 100%;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            color: #777777;
+            flex-wrap: wrap;
+
+        }
+        .ad {
+            color: #E47311;
+            border: 1px solid white;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0px 7px 15px 0px #777777;
+            margin-left: 40px;
+        }
+
+        .address {
+            border-top: 22px solid black;
+            border-bottom: 30px solid black;
+            border-left: 5px solid black;
+            border-right: 5px solid black;
+            border-radius: 15px;
+            width: 380px;
+            height: 500px;
+            text-align: center;
+            box-shadow: 0px 6px 15px 0px #777777;
+        }
+
+        .contact {
+            color: #E47311;
+            border: 1px solid white;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0px 7px 15px 0px #777777;
+            margin-left: 40px;
+        }
+
+        .con {
+            border-top: 22px solid black;
+            border-bottom: 30px solid black;
+            border-left: 5px solid black;
+            border-right: 5px solid black;
+            border-radius: 15px;
+            width: 380px;
+            height: 500px;
+            text-align: center;
+            box-shadow: 0px 6px 15px 0px #777777;
+        }
+        .mail{
+            border-top: 22px solid black;
+            border-bottom: 30px solid black;
+            border-left: 5px solid black;
+            border-right: 5px solid black;
+            border-radius: 15px;
+            width: 380px;
+            height: 500px;
+            text-align: center;
+            box-shadow: 0px 6px 15px 0px #777777;
+        }
+        .maill{
+            color: #E47311;
+            border: 1px solid white;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0px 7px 15px 0px #777777;
+            margin-left: 40px;
+        }
+        @media only screen and (max-width: 1077px) {
+            .main_box {
+                height: fit-content;
+            }
+
+        }
+        @media only screen and (max-width: 914px) {
+            .main_box {
+                height: fit-content;
+            }
+
+        }
+        @media only screen and (max-width: 768px) {
+            .main_box {
+                height: fit-content;
+            }
+
+        }
+        @media only screen and (max-width: 614px) {
+            .main_box {
+                height: fit-content;
+            }
+ 
+        }
+        @media only screen and (max-width: 412px) {
+            .main_box {
+                height: fit-content;
+            }
+
+        }
+        @media only screen and (max-width: 364px) {
+            .main_box {
+                height: fit-content;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parallax">
+        <header class="header">
+            <nav class="navbar">
+                <img src="https://www.maluweld.com/image/logo.jpg"
+                    alt="">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="aboutus.html" class="nav-link">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html" class="nav-link">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact Us</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </header>
+        <div>
+        <div class="h1">
+            <br>
+            <h1>CONTACT US</h1>
+            <div style="color: white;">• • • • </div>
+        </div>
+
+        <div class="heading">
+            <h2>Need an expert?you are more than welcomed to leave your <br>contact info and we will be in touch</h2>
+        </div>
+        </div>
+
+        <div class="main_box">
+            <div class="address">
+                <br>
+                <div><img
+                        src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQZ2RrqKfwbh7UTMFvwFgoA8Qt9pRoCesjoUMHSUW7Hi6TzrSvF"
+                        width="100px"></div>
+                <div>
+                    <h3><b>VISIT US</b></h3>
+                </div>
+                <br>
+                <div class="ad">
+                    <h3>
+                        <p>Bhavani Welding Pvt.Ltd.Plot
+                            No.204 & 205,Umiya Industrial
+                            Area,Kapsi,Bhandara Road,
+                            Nagpur Maharashtra India</p>
+                    </h3>
+                </div>
+            </div>
+
+            <div class="con">
+                <br>
+                <div><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0Rnqsfu2rdg19v0j9oS-rcFOTzmi4FJwZWvFwuu3N96-fA2Vx"
+                        width="80px"></div>
+                <div>
+                    <h3><b>CALL US</b></h3>
+                </div>
+                <br>
+                <br><div class="contact">
+                  <h3><p>918208811424</p>
+                    <p>919822230800</p></h3>
+                </div>
+            </div>
+
+            <div class="mail">
+                <div style="padding-top: 1px;">
+                   <br><br> <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSaN-q5XKPJ00fvsGDoXJFkpoqitYr7JxD57hm0IUw9pYtPCNSC" width="90px">
+                </div>
+                <div>
+                 <h3><b>FOR ANY INQUIRY</b></h3>
+                </div>
+                <br><br><div class="maill">
+                    <h3><p>In case of
+                        manufacturing defect
+                        please contact an email:
+                        info@maluweld.com
+                    </p></h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div>
+            <br>
+            <center><iframe width=90% height=400px
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d476292.455470535!2d79.148381!3d21.151013!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c73933c2a933%3A0xa3eb18cfe5ba36d2!2sBhandara%20Rd%2C%20Nagpur%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sus!4v1703528921155!5m2!1sen!2sus"
+                    width="600" height="450" style="border:0;margin-bottom: 15px;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></center></iframe>
+        </div> -->
+    </div>
+    <div class="footer">
+        <div>
+            <h3>Copyright © 2023 Maluweld</h3>
+            <h3>Developed by <a href="https://www.pskitservices.com/" style="color: #fff;">PSK Technologies Pvt.Ltd.</a></h3>
+        </div>
+        </div>
+
+        <script>
+            const hamburger = document.querySelector(".hamburger");
+            const navMenu = document.querySelector(".nav-menu");
+    
+            hamburger.addEventListener("click", mobileMenu);
+    
+            function mobileMenu() {
+                hamburger.classList.toggle("active");
+                navMenu.classList.toggle("active");
+            }
+    
+            const navLink = document.querySelectorAll(".nav-link");
+    
+            navLink.forEach(n => n.addEventListener("click", closeMenu));
+    
+            function closeMenu() {
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
+            }
+        </script>
+</body>
+
+</html>
